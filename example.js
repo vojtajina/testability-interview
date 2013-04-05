@@ -1,4 +1,4 @@
-var Notifier = function(backend) {
+var Notifier = function(backend, batchLimit) {
   var queue = Notifier.queue;
 
   this.send = function(user, message)  {
@@ -6,7 +6,7 @@ var Notifier = function(backend) {
 
     queue.push([email, this.encodeMessage(message)]);
 
-    if (queue.length === app.getConfig('notifier_batch_limit')) {
+    if (queue.length === batchLimit) {
       // send it to the backend server
       backend.sendBatch(queue);
     }
