@@ -2,7 +2,14 @@
 
 An interview that aims to show couple of basic refactorings towards better testability. Click the links to see actual code changes...
 
---
+### Run the tests with karma
+
+````bash
+npm install -g karma
+karma start
+````
+
+### Here it is...
 
 *I have [this code](https://github.com/vojtajina/testability-interview/commit/d6e24befb065a5bcc642af48d02bcc7fbc1ab06b) and want to test the message encoding. To make it easier, I [extracted the encoding into a separate method](https://github.com/vojtajina/testability-interview/commit/dcecb599d417feafa8d4d6c39aed71d6a4417982), but it still feels crazy. Why do I have to care about Backend? I don’t need it for encoding messages at all...*
 
