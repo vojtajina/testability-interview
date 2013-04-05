@@ -1,5 +1,4 @@
-var Notifier = function() {
-  var backend = new Backend(app.getConfig('backend_url'), app.getConfig('backend_port'));
+var Notifier = function(backend) {
   var queue = Notifier.queue;
 
   this.send = function(user, message)  {
