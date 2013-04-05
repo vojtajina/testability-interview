@@ -14,16 +14,7 @@ describe('Notifier', function() {
       var backendMock = jasmine.createSpyObj('Backend', ['sendBatch']);
       var n = new Notifier(backendMock, 1, []);
 
-      var userDetails = {
-        email: 'me@domain.com'
-      };
-      var user = {
-        getDetails: function() {
-          return userDetails;
-        }
-      };
-
-      n.send(user, 'howdy');
+      n.send('me@domain.com', 'howdy');
 
       expect(backendMock.sendBatch).toHaveBeenCalled();
     });
@@ -33,19 +24,10 @@ describe('Notifier', function() {
       var backendMock = jasmine.createSpyObj('Backend', ['sendBatch']);
       var n = new Notifier(backendMock, 2, []);
 
-      var userDetails = {
-        email: 'me@domain.com'
-      };
-      var user = {
-        getDetails: function() {
-          return userDetails;
-        }
-      };
-
-      n.send(user, 'howdy');
+      n.send('me@domain.com', 'howdy');
       expect(backendMock.sendBatch).not.toHaveBeenCalled();
 
-      n.send(user, 'again');
+      n.send('me@domain.com', 'again');
       expect(backendMock.sendBatch).toHaveBeenCalled();
     });
   });
