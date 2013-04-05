@@ -1,5 +1,4 @@
-var Notifier = function(backend, batchLimit) {
-  var queue = Notifier.queue;
+var Notifier = function(backend, batchLimit, queue) {
 
   this.send = function(user, message)  {
     var email = user.getDetails().email;
@@ -18,7 +17,6 @@ var Notifier = function(backend, batchLimit) {
   }
 };
 
-Notifier.queue = [];
 
 var Backend = function(url, port) {
   // this guy is very expensive and talks to the server a lot
