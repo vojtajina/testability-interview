@@ -5,16 +5,18 @@ var Notifier = function() {
   this.send = function(user, message)  {
     var email = user.getDetails().email;
 
-    // encode the message
-    var msg = 'secret:' + message;
-
-    queue.push([email, msg]);
+    queue.push([email, this.encodeMessage(message)]);
 
     if (queue.length === app.getConfig('notifier_batch_limit')) {
       // send it to the backend server
       backend.sendBatch(queue);
     }
   };
+
+  this.encodeMessage = function(message) {
+    // this will be super difficult algorithm, that needs to be well tested
+    return 'secret:' + message;
+  }
 };
 
 Notifier.queue = [];

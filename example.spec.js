@@ -1,5 +1,5 @@
 describe('Notifier', function() {
-  describe('send', function() {
+  describe('encodeMessage', function() {
     it('should encode the message', function() {
       // in a more static language like Java or C++, this would be way mooore difficult
       var lastSentMessage = null;
@@ -13,23 +13,8 @@ describe('Notifier', function() {
       // it would instantiate Backend, that fires xhr to the server
       var n = new Notifier();
 
-      // we need this crap, even though it's not required by the tested functionality at all
-      var userDetails = {
-        email: 'some@domain.com'
-      };
-      var user = {
-        getDetails: function() {
-          return userDetails;
-        }
-      };
-
-      // disable the batching, so that even the first message is sent and we can assert it
-      app.setConfig('notifier_batch_limit', 1);
-
-      n.send(user, 'hello');
-
       // finally expect, whether the encoding was correct
-      expect(lastSentMessage).toBe('secret:hello');
+      expect(n.encodeMessage('hello')).toBe('secret:hello');
     });
   });
 });
