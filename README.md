@@ -31,7 +31,7 @@ karma start
 
 **What’s up buddy?**
 
-*Watch [this test]() I just added. It’s failing, but when I run only this test, it passes!*
+*Watch [this test](https://github.com/vojtajina/testability-interview/commit/013d096b82d1445626618ce671507cedc2661df0) I just added. It’s failing, but when I run only this test, it passes!*
 
 **I smell global state here ;-) Let me have a look...**
 
