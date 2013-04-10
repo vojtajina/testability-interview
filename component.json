@@ -1,0 +1,13 @@
+{
+  "name": "testability-interview",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "~1.0.6",
+    "bootstrap.css": "~2.1.1"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}
