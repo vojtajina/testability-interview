@@ -13,6 +13,7 @@ var Notifier = function() {
     if (queue.length === app.getConfig('notifier_batch_limit')) {
       // send it to the backend server
       backend.sendBatch(queue);
+      queue.length = 0;
     }
   };
 };
@@ -20,8 +21,15 @@ var Notifier = function() {
 Notifier.queue = [];
 
 var Backend = function(url, port) {
+  this.sendBatch = function(listOfMessages) {
+    console.log('SENDING A BATCH');
+    listOfMessages.forEach(function(msg) {
+      console.log(msg[0], 'to', msg[1]);
+    });
+    console.log('===========================');
+  };
   // this guy is very expensive and talks to the server a lot
-  throw new Error('I am sending a request to server fucka!');
+//  throw new Error('I am sending a request to server fucka!');
 };
 
 

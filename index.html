@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="chat">
+<head>
+    <title></title>
+    <script type="text/javascript" src="components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="example.js"></script>
+    <link rel="stylesheet" href="components/bootstrap.css/css/bootstrap.min.css"/>
+</head>
+<body ng-controller="Main">
+
+<ul>
+    <li ng-repeat="user in users">{{user.name}} <button ng-click="notify(user)">notify</button></li>
+</ul>
+
+</body>
+</html>
