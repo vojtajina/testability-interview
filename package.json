@@ -1,0 +1,23 @@
+{
+  "name": "testability-interview",
+  "version": "0.0.0",
+  "description": "An example of refactoring towards better testability...",
+  "main": "\"\"",
+  "devDependencies": {
+    "karma": "~0.10",
+    "karma-chrome-launcher": "*",
+    "karma-jasmine": "*"
+  },
+  "scripts": {
+    "test": "karma start --single-run --no-auto-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vojtajina/testability-interview.git"
+  },
+  "author": "Vojta Jina <vojta.jina@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vojtajina/testability-interview/issues"
+  }
+}
